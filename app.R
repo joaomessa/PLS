@@ -3,6 +3,9 @@ library(bslib)
 library(plotly)
 library(ggplot2)
 
+# Adicione esta linha para revelar o erro real na tela do navegador
+options(shiny.sanitize.errors = FALSE)
+
 # Interface visual moderna com bslib
 ui <- page_sidebar(
   title = "Painel Interativo R",
