@@ -1,11 +1,19 @@
 # Usa a imagem oficial do Shiny como base
 FROM rocker/shiny:latest
 
-# Instala dependências do sistema Linux necessárias para pacotes como bslib e plotly
+# Instala dependências do sistema Linux necessárias para pacotes como fs, bslib e plotly
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
     zlib1g-dev \
+    libuv1-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Instala os pacotes R utilizados no painel
